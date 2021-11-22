@@ -1,9 +1,12 @@
+// import modules
 const redux = require("redux");
+const reduxLogger = require("redux-logger");
 
+//create uitilities
 const createStore = redux.createStore;
 const combineReducers = redux.combineReducers; // to combine multiple reducer and make one to create store
-
-console.log("hii");
+const applyMiddleware = redux.applyMiddleware;
+const logger = reduxLogger.createLogger();
 
 // action
 const BUY_CAKE = "BUY_CAKE";
@@ -15,8 +18,6 @@ function buyCake() {
   return {
     // properties which defines what to do with states of store
     type: BUY_CAKE,
-
-    info: "first redux",
   };
 }
 
@@ -87,12 +88,12 @@ const rootReducer = combineReducers({
   iceCream: IcecreamReducer,
 });
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(logger));
 
 console.log("initial state", store.getState());
 
 const unsubscribe = store.subscribe(() => {
-  console.log("upadated state", store.getState());
+  // console.log("upadated state", store.getState());
 });
 
 store.dispatch(buyCake());
