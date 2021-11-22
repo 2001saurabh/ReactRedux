@@ -11,15 +11,18 @@ function CakeContainer(props) {
   );
 }
 
+// this function maps the state of object to props to display data to element
 const mapStateToProps = (state) => {
   return {
     numOfCakes: state.numOfCakes,
   };
 };
 
+// this function helps us to pass this method as props to dispatch buyCake() action to prop "buyCake"
 const mapDispatchToProps = (dispatch) => {
   return {
     buyCake: () => dispatch(buyCake()),
   };
 };
+// connect function connect our react component to redux store
 export default connect(mapStateToProps, mapDispatchToProps)(CakeContainer);
