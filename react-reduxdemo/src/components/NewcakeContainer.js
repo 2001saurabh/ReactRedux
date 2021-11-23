@@ -7,7 +7,7 @@ function CakeContainer(props) {
   return (
     <div>
       <h2 className="ui violet header">Number of cakes= {props.numOfCakes}</h2>
-      <div class="ui action input">
+      <div className="ui action input">
         <input
           type="text"
           placeholder="No of Cakes To Buy"
