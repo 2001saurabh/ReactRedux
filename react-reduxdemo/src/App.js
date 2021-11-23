@@ -1,11 +1,12 @@
 import "./App.css";
 import { Provider } from "react-redux";
-import CakeContainer from "./components/CakeContainer";
+// import CakeContainer from "./components/CakeContainer";
 import store from "./redux/store";
-import HooksCakeContainer from "./components/HooksCakeContainer";
-import IcecreamContainer from "./components/IcecreamContainer";
+// import HooksCakeContainer from "./components/HooksCakeContainer";
+// import IcecreamContainer from "./components/IcecreamContainer";
 import imageCover from "./assets/nas.jpg";
-import NewcakeContainer from "./components/NewcakeContainer";
+// import NewcakeContainer from "./components/NewcakeContainer";
+import UserDetails from "./components/UserDetails";
 
 function App() {
   return (
@@ -31,10 +32,11 @@ function App() {
             borderRadius: 10,
           }}
         >
-          <CakeContainer />
+          {/* <CakeContainer />
           <HooksCakeContainer />
           <IcecreamContainer />
-          <NewcakeContainer />
+          <NewcakeContainer /> */}
+          <UserDetails />
         </div>
       </div>
     </Provider>
